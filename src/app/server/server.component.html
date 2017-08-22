@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]="serverName" />
+<button *ngIf="!isEdit" (click)="addServer()">Save</button>
+<button *ngIf="isEdit" (click)="updateServer()">Update</button>
+
+<p *ngFor="let server of servers; let i = index">
+  {{ server }}
+  <button (click)="editServer(i)">Edit</button>
+  <button (click)="removeServer(i)">x</button>
+</p>
